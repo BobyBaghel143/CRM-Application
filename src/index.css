@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* This won't be included in your compiled CSS unless you actually use it */
+  .table-title {
+    @apply text-lg flex flex-wrap justify-center items-center;
+  }
+}
