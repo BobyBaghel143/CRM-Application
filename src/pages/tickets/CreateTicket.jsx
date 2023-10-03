@@ -7,6 +7,7 @@ import HomeLayout from "../../layouts/Homelayout";
 import { createTicket } from "../../Redux/Slices/TicketSlice";
 
 function CreateTicket() {
+    
     const auth = useSelector((state) =>  state.auth );
     const dispatch = useDispatch();
     useTickets();
@@ -28,7 +29,7 @@ function CreateTicket() {
     }
 
     async function onFormSubmit(e) {
-        e.prevetDefault();
+        e.preventDefault();
         if (!ticket.title || !ticket.description) {
             toast.error("Title and description are mandatory");
             return;
@@ -76,7 +77,7 @@ function CreateTicket() {
                             name="description"
                             onChange={handleFormChange}
                             value={ticket.description}
-                            rows={8}
+                            rows=""
                             placeholder="Type here"
                             className=" p-2 border border-primary rounded-md bg-sky-900 text-white  w-full  resize-none hover:bg-black "
                         ></textarea>
